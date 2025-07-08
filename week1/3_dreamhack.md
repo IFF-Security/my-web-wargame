@@ -10,7 +10,7 @@
     - [Directory Listing](#directory-listing)
     - [Path Traversal](#path-traversal)
     - [문제 풀이](#문제-풀이-1)
-- [file-download-1]
+- [file-download-1](#3-file-download-1)
     - [File Upload/Download 취약점](#file-uploaddownload-취약점)
     - [문제 풀이](#문제-풀이-2)
 
