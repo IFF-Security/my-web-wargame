@@ -79,7 +79,7 @@
 
 ## Session
 
-* HTTP 프로토콜은 기본적으로 Connectionless함.
+* HTTP 프로토콜은 기본적으로 Stateless함.
 * 때문에 한 Request에서 이전 Request-Response의 결과를 기억하지 못함.
 * 이를 해결하기 위해 개발된 기술.
 * 클라이언트의 일련의 Request를 하나의 상태로 보고, 그를 일정하게 유지한다.
