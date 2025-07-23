@@ -2,6 +2,7 @@
 * [Non-persistant XSS (Reflected XSS)](#non-persistant-xss-reflected-xss)
 * [Persistant XSS (Stored XSS)](#persistant-xss-stored-xss)
 * [DOM XSS](#dom-xss)
+* [기타](#기타)
     * [UXSS (Universal XSS)](#uxss-universal-xss)
     * [Blind XSS](#blind-xss)
     * [mXSS (Mutation XSS)](#mxss-mutaion-xss)
