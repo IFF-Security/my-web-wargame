@@ -7,7 +7,6 @@
 * [xss-1](https://claude.ai/share/4c335f96-08cd-42db-8ce1-80aeafc5bc60)
   * [실패한 요청 1](https://claude.ai/share/bd5d14c9-302b-418f-99a9-02f7057b5359)
   * [실패한 요청 2](https://claude.ai/share/4b029c5d-2c03-40f7-955a-b8904d445456)
-  * [실패한 요청 3](https://claude.ai/share/bcfc567b-254e-45f9-aea2-7433fe9e3737)
   * (그 외 기록하지 못하고 삭제된 n개의 요청들...)
 * xss-2 (실패)
   * [실패한 요청 1](https://claude.ai/share/356fa6ad-25d2-4548-b938-9bbf7156b044)
