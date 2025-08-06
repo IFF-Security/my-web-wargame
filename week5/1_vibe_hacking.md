@@ -21,4 +21,5 @@
 * [csrf-2](https://claude.ai/share/49ca0ea4-c10c-428b-af8b-2c3f8cd45333)
 
 ## 4주차
-* [filestorage](https://claude.ai/share/e1b52fcb-801c-4026-89c9-0ee650500494)
+* [filestorage](https://claude.ai/share/46ddcd2a-e907-4d97-8863-e4377bd9e923)
+  * [좀 덜 깔끔한 버전](https://claude.ai/share/e1b52fcb-801c-4026-89c9-0ee650500494)
