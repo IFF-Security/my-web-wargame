@@ -1,4 +1,4 @@
-from typing import Optional, Dict, Any, Callable
+from typing import Optional, Dict, Any
 
 import logging
 from requests import get, post
@@ -7,7 +7,7 @@ import sys
 
 from mcp.server.fastmcp import FastMCP
 
-from common import Response, Configure, Kali
+from common import Response, Configure
 
 logging.basicConfig(
     level=logging.INFO,
@@ -32,10 +32,11 @@ class Client:
         self.timeout = timeout
     
     def get(self, endpoint: str, params: Optional[Dict[str, Any]] = None):
-        if not params:
-            params = {}
-        url = self.server_url + endpoint
         try:
+            if not params:
+                params = {}
+
+            url = self.server_url + endpoint
             resp = get(url, params=params, timeout=self.timeout)
             return resolve(resp.json())
         except RequestException as e:
@@ -64,12 +65,14 @@ class Client:
 mcp = FastMCP("Kali + SBOM")
 
 def setup_perplexity(server: str, timeout: int):
-    if Configure.use_perplexity:
-        client = Client(server, timeout)
-        
-        @mcp.tool()
-        def perplexity_search(query: str):
-            return client.post("/api/search", { "query": query })
+    if not Configure.use_perplexity:
+        return
+    
+    client = Client(server, timeout)
+    
+    @mcp.tool()
+    def perplexity_search(query: str):
+        return client.post("/api/search", { "query": query })
 
 def setup_kali(server: str, timeout: int):
     client = Client(server, timeout)
