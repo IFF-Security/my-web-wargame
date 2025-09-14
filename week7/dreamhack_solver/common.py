@@ -2,16 +2,8 @@ from typing import Any, Dict, Optional
 from dataclasses import dataclass
 
 class Configure:
-    class port:
-        kali = 5000
-        perplexity = 5050
-    use_perplexity = False # TODO: Update this to True after get perplexity api
+    port = 5000
     timeout = 3 * 60
-
-class Kali:
-    curl = "curl"
-    trivy = "trivy"
-    command = "command"
 
 @dataclass
 class CommandResult:
@@ -27,3 +19,6 @@ class Response:
     success: bool
     data: Optional[Dict[str, Any]]
     error: Optional[str]
+
+def resolve(data): return Response(True, data, None)
+def reject(why): return Response(False, None, why)
